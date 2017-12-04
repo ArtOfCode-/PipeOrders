@@ -9,7 +9,7 @@ public class PipeOrders {
                 System.out.println("");
             }
             catch (InterruptedException ex) {
-                // TODO
+                System.out.println("Operation encountered an error: " + ex.getMessage());
             }
             catch (Exception ex) {
                 System.out.println("No available pipe: " + ex.getMessage());
