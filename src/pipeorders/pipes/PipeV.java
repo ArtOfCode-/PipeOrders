@@ -16,13 +16,6 @@ public class PipeV extends AbstractPipe {
     }
 
     /**
-     * @see AbstractPipe#getPricePerCubicInch
-     */
-    public float getPricePerCubicInch() {
-        return 0.95f;
-    }
-
-    /**
      * @see AbstractPipe#supportsColorPrintType(int)
      */
     public boolean supportsColorPrintType(int colors) {

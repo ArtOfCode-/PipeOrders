@@ -6,7 +6,7 @@ public class PipeOrders {
             try {
                 Order order = UI.awaitOrder();
                 System.out.println(order);
-                order.calculate();
+                System.out.println("Total: " + order.calculate());
             }
             catch (InterruptedException ex) {
                 // TODO
