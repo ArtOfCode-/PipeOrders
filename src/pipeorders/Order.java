@@ -2,23 +2,9 @@ package pipeorders;
 
 import pipeorders.pipes.AbstractPipe;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Predicate;
-
 public class Order {
     private static final int MIN_QUANTITY = 1;
     private static final int MAX_QUANTITY = 1000;
-
-    private static HashMap<Predicate<Order>, Double> extraCosts;
-    static {
-        extraCosts = new HashMap<Predicate<Order>, Double>();
-        extraCosts.put((o) -> o.getColors() == 1, 0.12d);
-        extraCosts.put((o) -> o.getColors() == 2, 0.16d);
-        extraCosts.put((o) -> o.requiresInsulation(), 0.13d);
-        extraCosts.put((o) -> o.requiresReinforcement(), 0.17d);
-        extraCosts.put((o) -> o.requiresChemicalResistance(), 0.14d);
-    }
     
     private final int grade;
     private final float length;
@@ -69,7 +55,7 @@ public class Order {
         return chemicalResistance;
     }
     
-    public int getQuantity() {
+    private int getQuantity() {
         return quantity;
     }
     
@@ -103,11 +89,20 @@ public class Order {
 
             double finalCost = finalVol * pricePerUnit;
 
-            for (Map.Entry<Predicate<Order>, Double> entry : extraCosts.entrySet()) {
-                if (entry.getKey().test(this)) {
-                    double extra = finalCost * entry.getValue();
-                    finalCost += extra;
-                }
+            if (getColors() == 1) {
+                finalCost *= 1.12;
+            }
+            if (getColors() == 2) {
+                finalCost *= 1.16;
+            }
+            if (requiresInsulation()) {
+                finalCost *= 1.13;
+            }
+            if (requiresReinforcement()) {
+                finalCost *= 1.17;
+            }
+            if (requiresChemicalResistance()) {
+                finalCost *= 1.14;
             }
 
             return finalCost * getQuantity();

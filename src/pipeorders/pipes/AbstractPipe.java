@@ -80,22 +80,19 @@ public abstract class AbstractPipe {
      * @throws Exception if no valid pipe type can be found.
      */
     public static AbstractPipe findSupportingPipe(Order details) throws Exception {
-        Optional<AbstractPipe> supportingType = PIPE_TYPES.stream().filter((type) -> {
-            return details.getGrade() >= type.getMinSupportedGrade() &&
-                   details.getGrade() <= type.getMaxSupportedGrade() &&
-                   type.supportsColorPrintType(details.getColors()) &&
-                   details.getLength() <= MAX_LENGTH &&
-                   details.getLength() >= MIN_LENGTH && 
-                   details.getOuterDiameter() <= MAX_DIAMETER &&
-                   details.requiresInsulation() ? type.supportsInsulation() : !type.supportsInsulation() &&
-                   details.requiresReinforcement() ? type.supportsReinforcement() : !type.supportsReinforcement();
-        }).findFirst();
-        
-        if (supportingType.isPresent()) {
-            return supportingType.get();
+        for (AbstractPipe type : PIPE_TYPES) {
+            if (details.getGrade() >= type.getMinSupportedGrade() &&
+                details.getGrade() <= type.getMaxSupportedGrade() &&
+                type.supportsColorPrintType(details.getColors()) &&
+                details.getLength() <= MAX_LENGTH &&
+                details.getLength() >= MIN_LENGTH &&
+                details.getOuterDiameter() <= MAX_DIAMETER &&
+                (!details.requiresInsulation() || type.supportsInsulation()) &&
+                (!details.requiresReinforcement() || type.supportsReinforcement())) {
+                return type;
+            }
         }
-        else {
-            throw new Exception("No known pipe type supports the requirements of the order.");
-        }
+
+        throw new Exception("No known pipe type supports the requirements of the order.");
     }
 }
