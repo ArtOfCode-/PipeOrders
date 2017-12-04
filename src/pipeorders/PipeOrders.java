@@ -5,8 +5,8 @@ public class PipeOrders {
         while (true) {
             try {
                 Order order = UI.awaitOrder();
-                System.out.println(order);
-                System.out.println("Total: " + order.calculate());
+                System.out.println("Total: £" + String.format("%.2f", order.calculate()));
+                System.out.println("");
             }
             catch (InterruptedException ex) {
                 // TODO
