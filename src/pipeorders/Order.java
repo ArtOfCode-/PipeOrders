@@ -108,7 +108,7 @@ public class Order {
             return finalCost * getQuantity();
         }
         else {
-            throw new Exception("Invalid order.");
+            throw new Exception("Quantity not in valid range (1-1000).");
         }
     }
 }

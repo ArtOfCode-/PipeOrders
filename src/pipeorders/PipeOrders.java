@@ -2,17 +2,17 @@ package pipeorders;
 
 public class PipeOrders {
     public static void main(String[] args) {
+        UI userInterface = new UI();
         while (true) {
             try {
                 Order order = UI.awaitOrder();
-                System.out.println("Total: £" + String.format("%.2f", order.calculate()));
-                System.out.println("");
+                userInterface.displayCost(order.calculate());
             }
             catch (InterruptedException ex) {
-                System.out.println("Operation encountered an error: " + ex.getMessage());
+               userInterface.displayError("Operation encountered an error: " + ex.getMessage());
             }
             catch (Exception ex) {
-                System.out.println("No available pipe: " + ex.getMessage());
+                userInterface.displayError("No available pipe: " + ex.getMessage());
             }
         }
     }
