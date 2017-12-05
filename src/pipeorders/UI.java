@@ -149,6 +149,9 @@ public class UI extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Constructs a new UI object.
+     */
     UI() {
         inputs = new HashMap<>();
 
@@ -163,6 +166,10 @@ public class UI extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+    /**
+     * Initialises the GUI and adds the necessary elements to it.
+     * @param contentPanel The parent panel for the whole GUI.
+     */
     private void setupFormInterface(JPanel contentPanel) {
         JLabel lengthLabel = new JLabel();
         lengthLabel.setText("Length (metres)");
@@ -265,6 +272,10 @@ public class UI extends JFrame implements ActionListener {
         parent.add(Box.createRigidArea(new Dimension(0, margin)));
     }
 
+    /**
+     * Event handler for GUI-based interface events.
+     * @param ae Parameters from the action performed.
+     */
     public void actionPerformed(ActionEvent ae) {
         try {
             String selectedGrade = (String) ((JComboBox) inputs.get("grade")).getSelectedItem();
@@ -304,10 +315,18 @@ public class UI extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Given a cost, display it in the appropriate place in the UI.
+     * @param cost A double containing the order cost to display.
+     */
     void displayCost(double cost) {
         ((JLabel) inputs.get("messages")).setText("Total cost: £" + String.format("%.2f", cost));
     }
 
+    /**
+     * Given an error message, display it in the appropriate place in the UI.
+     * @param message A String containing the error message to display.
+     */
     void displayError(String message) {
         ((JLabel) inputs.get("messages")).setText(message);
     }
