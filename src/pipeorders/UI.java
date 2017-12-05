@@ -7,7 +7,6 @@ import java.util.concurrent.Semaphore;
 
 /**
  * Manages the application's user interface.
- * @author Owen Jenkins
  */
 public class UI {
     /**
