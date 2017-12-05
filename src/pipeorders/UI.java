@@ -10,7 +10,14 @@ import java.util.concurrent.Semaphore;
  * @author Owen Jenkins
  */
 public class UI {
-    private static final Queue<Order> ORDER_QUEUE = new LinkedList<Order>();
+    /**
+     * Contains a queue of all unprocessed orders.
+     */
+    private static final Queue<Order> ORDER_QUEUE = new LinkedList<>();
+
+    /**
+     * Used to signal when an order is available in the queue.
+     */
     private static final Semaphore ORDER_SIGNALER = new Semaphore(0);
     
     /**

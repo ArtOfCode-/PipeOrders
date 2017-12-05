@@ -69,6 +69,11 @@ public abstract class AbstractPipe {
      */
     public abstract boolean supportsReinforcement();
 
+    /**
+     * Get the price per cubic inch of plastic for this pipe. Based on plastic grade.
+     * @param grade The grade of plastic to be used in the pipe.
+     * @return A double containing a price per unit volume.
+     */
     public double getPricePerCubicInch(int grade) {
         return GRADED_PRICES.get(grade);
     }
