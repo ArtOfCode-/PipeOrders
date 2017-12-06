@@ -1,2 +1,4 @@
 manifest.mf
 nbproject/
+*.xml
+.idea/PipeOrders.iml
