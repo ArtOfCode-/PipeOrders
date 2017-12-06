@@ -329,32 +329,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void orderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderButtonActionPerformed
-        
-        float length = Float.parseFloat(lengthField.getText());
-        float diameter = Float.parseFloat(diameterField.getText());
-        int grade = Integer.parseInt(radioButtonGet(gradeButtons));
-        int colors = 0;
-        switch(radioButtonGet(colourTypeButtons)) {
-            case "No colour":
-                colors = 0;
-            case "One colour":
-                colors = 1;
-            case "Two colour":
-                colors = 2;
-        }
-        boolean reinforced = outerCheckBox.isSelected();
-        boolean insulated = innerCheckBox.isSelected();
-        boolean chemResist = chemCheckBox.isSelected();
-        
-        int quantity = Integer.parseInt(quantityField.getText());
-        
-        reinforced = innerCheckBox.isSelected()==true;
-        
-        insulated = outerCheckBox.isSelected()==true;
-        
-        chemResist = chemCheckBox.isSelected()==true;
-        
-        Order customerOrder = new Order(grade, length, diameter, colors, insulated, reinforced, chemResist, quantity);
+        makeOrder();
     }//GEN-LAST:event_orderButtonActionPerformed
 
     private void gradeThreeButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gradeThreeButtonMouseReleased
@@ -591,6 +566,34 @@ public class GUI extends javax.swing.JFrame {
         chemCheckBox.setSelected(false);
         quantityField.setText("");
         orderButton.setEnabled(false);
+    }
+    
+    public Order makeOrder() {
+        float length = Float.parseFloat(lengthField.getText());
+        float diameter = Float.parseFloat(diameterField.getText());
+        int grade = Integer.parseInt(radioButtonGet(gradeButtons));
+        int colors = 0;
+        switch(radioButtonGet(colourTypeButtons)) {
+            case "No colour":
+                colors = 0;
+            case "One colour":
+                colors = 1;
+            case "Two colour":
+                colors = 2;
+        }
+        boolean reinforced = outerCheckBox.isSelected();
+        boolean insulated = innerCheckBox.isSelected();
+        boolean chemResist = chemCheckBox.isSelected();
+        
+        int quantity = Integer.parseInt(quantityField.getText());
+        
+        reinforced = innerCheckBox.isSelected()==true;
+        
+        insulated = outerCheckBox.isSelected()==true;
+        
+        chemResist = chemCheckBox.isSelected()==true;
+        
+        Order customerOrder = new Order(grade, length, diameter, colors, insulated, reinforced, chemResist, quantity);
     }
     
     public static void main(String args[]) {
