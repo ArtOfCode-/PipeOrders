@@ -1,6 +1,10 @@
 package pipeorders;
 
 public class PipeOrders {
+    /**
+     * Main entry point for the application
+     * @param args Arguments passed to the application from the command-line.
+     */
     public static void main(String[] args) {
         GUI mainGUI = new GUI();
         mainGUI.setVisible(true);

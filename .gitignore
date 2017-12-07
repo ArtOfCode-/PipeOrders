@@ -4,3 +4,8 @@ nbproject/
 .idea/PipeOrders.iml
 /build/
 /dist/
+manifest.mf
+nbproject/
+.idea/
+build/
+
