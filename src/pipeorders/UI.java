@@ -29,7 +29,11 @@ public class UI {
         ORDER_SIGNALER.acquire();
         return ORDER_QUEUE.remove();
     }
-    
+
+    /**
+     * Adds an order into the order queue.
+     * @param details An Order instance to queue up.
+     */
     public static void addOrderToQueue(Order details) {
         ORDER_QUEUE.add(details);
         ORDER_SIGNALER.release();

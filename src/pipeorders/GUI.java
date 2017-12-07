@@ -412,10 +412,14 @@ public class GUI extends javax.swing.JFrame {
     private void quantityFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantityFieldKeyReleased
         orderCheck();
     }//GEN-LAST:event_quantityFieldKeyReleased
-    
 
-    // cycles through each button in a button group and checks to see if its selected, if it is, it returns the value of it
-    public String radioButtonGet(ButtonGroup group) {
+
+    /**
+     * Cycles through a group of radio buttons and checks if each is selected; returns its value if it is.
+     * @param group A ButtonGroup of radio buttons to check through.
+     * @return A String value of the selected radio button.
+     */
+    private String radioButtonGet(ButtonGroup group) {
             for (Enumeration<AbstractButton> buttons = group.getElements(); buttons.hasMoreElements();) {
                 AbstractButton radioButton = buttons.nextElement();
                 if (radioButton.isSelected()) {
@@ -582,7 +586,11 @@ public class GUI extends javax.swing.JFrame {
         quantityField.setText("");
         orderButton.setEnabled(false);
     }
-    
+
+    /**
+     * Gets the value of all relevant form controls, and uses them to create an Order instance.
+     * @return An Order instance representing the current state of the input form.
+     */
     public Order makeOrder() {
         float length = Float.parseFloat(lengthField.getText());
         float diameter = Float.parseFloat(diameterField.getText());
@@ -611,11 +619,19 @@ public class GUI extends javax.swing.JFrame {
         Order customerOrder = new Order(grade, length, diameter, colors, insulated, reinforced, chemResist, quantity);
         return customerOrder;
     }
-    
+
+    /**
+     * Given a cost parameter, formats it and displays it in the correct place in the GUI.
+     * @param cost The raw cost to format and display.
+     */
     public void displayCost(double cost) {
         resultsLabel.setText("Total cost: £" + String.format("%.2f", cost));
     }
-    
+
+    /**
+     * Given a String, displays it as a message to the user in the correct place.
+     * @param text The text to display to the user.
+     */
     public void displayText(String text) {
         resultsLabel.setText(text);
     }
