@@ -177,7 +177,6 @@
                               <Component id="quantityField" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="quantityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
