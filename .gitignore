@@ -3,7 +3,6 @@ nbproject/
 *.xml
 .idea/PipeOrders.iml
 /build/
-/dist/
 manifest.mf
 nbproject/
 .idea/
