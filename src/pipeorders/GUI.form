@@ -57,12 +57,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="propLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="gradeLabel" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="colourLabel" alignment="1" min="-2" pref="87" max="-2" attributes="0"/>
                       <Component id="diameterLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="lengthLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="quantityLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Component id="resultsLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="propLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -128,10 +131,10 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="gradeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="gradeOneButton" alignment="3" max="32767" attributes="0"/>
-                      <Component id="gradeTwoButton" alignment="3" pref="29" max="32767" attributes="0"/>
-                      <Component id="gradeThreeButton" alignment="3" pref="29" max="32767" attributes="0"/>
-                      <Component id="gradeFourButton" alignment="3" pref="29" max="32767" attributes="0"/>
-                      <Component id="gradeFiveButton" alignment="3" pref="29" max="32767" attributes="0"/>
+                      <Component id="gradeTwoButton" alignment="3" max="32767" attributes="0"/>
+                      <Component id="gradeThreeButton" alignment="3" max="32767" attributes="0"/>
+                      <Component id="gradeFourButton" alignment="3" max="32767" attributes="0"/>
+                      <Component id="gradeFiveButton" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -163,7 +166,9 @@
                               <Component id="quantityField" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="quantityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="resultsLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -398,6 +403,8 @@
           <Events>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ResetMouseReleased"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="resultsLabel">
         </Component>
       </SubComponents>
     </Container>
