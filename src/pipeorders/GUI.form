@@ -32,7 +32,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="MainPanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="MainPanel" alignment="0" pref="967" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -112,6 +112,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="orderButton" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="Reset" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="resetTotal" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="500" max="-2" attributes="0"/>
                       </Group>
@@ -165,9 +166,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="80" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="Reset" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="resetTotal" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           <Component id="orderButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -409,7 +412,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Reset">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Reset"/>
+            <Property name="text" type="java.lang.String" value="Reset Form"/>
           </Properties>
           <Events>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ResetMouseReleased"/>
@@ -417,12 +420,21 @@
         </Component>
         <Component class="javax.swing.JLabel" name="resultsLabel">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Total cost: &#xa3;0.00"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[500, 40]"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="resetTotal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reset Total"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="resetTotalMouseReleased"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
